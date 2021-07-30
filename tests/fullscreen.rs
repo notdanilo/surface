@@ -1,8 +1,8 @@
-use surface::{SurfaceBuilder, SurfaceContext, Window};
+use surface::{SurfaceBuilder, SurfaceManager};
 
 #[test]
 fn fullscreen() {
-    let context = SurfaceContext::FullScreen;
-    let surface = SurfaceBuilder::new(context).build().expect("Surface couldn't be created.");
-    surface.run();
+    let manager = SurfaceManager::new();
+    let _surface = SurfaceBuilder::new(&manager).build().expect("Surface couldn't be created.");
+    manager.run();
 }
